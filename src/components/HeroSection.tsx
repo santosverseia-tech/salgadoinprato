@@ -1,0 +1,68 @@
+import { motion } from "framer-motion";
+import { Package, CalendarDays, UtensilsCrossed } from "lucide-react";
+import LogoBadge from "./LogoBadge";
+import WhatsAppButton from "./WhatsAppButton";
+import heroImage from "@/assets/hero-salgados.jpg";
+
+const HeroSection = () => {
+  return (
+    <section className="relative overflow-hidden bg-primary pb-12 pt-6">
+      {/* Header */}
+      <div className="container flex items-center justify-between">
+        <LogoBadge size="lg" />
+        <WhatsAppButton text="📲 Peça agora" location="header" className="hidden text-base sm:inline-flex" />
+      </div>
+
+      {/* Hero content */}
+      <div className="container mt-8 grid items-center gap-8 md:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-balance text-4xl leading-tight text-secondary md:text-5xl lg:text-6xl">
+            Salgados fresquinhos e irresistíveis
+          </h1>
+          <p className="mt-4 text-lg text-secondary/80 md:text-xl">
+            Sabor que conquista no primeiro mordida e transforma qualquer evento em um sucesso.
+          </p>
+
+          {/* Service icons */}
+          <div className="mt-6 flex flex-wrap gap-4">
+            {[
+              { icon: Package, label: "Encomendas" },
+              { icon: CalendarDays, label: "Eventos" },
+              { icon: UtensilsCrossed, label: "Buffet" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2">
+                <Icon className="h-5 w-5 text-secondary" />
+                <span className="font-heading text-sm font-bold text-secondary">{label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <WhatsAppButton text="📲 Fazer pedido no WhatsApp" location="hero" />
+            <p className="mt-3 text-sm text-secondary/60">Atendimento rápido e pedidos personalizados.</p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center"
+        >
+          <img
+            src={heroImage}
+            alt="Salgados deliciosos - coxinhas, bolinhas de queijo, pastéis e kibes"
+            className="w-full max-w-md rounded-2xl shadow-2xl"
+            loading="eager"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
