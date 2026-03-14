@@ -39,7 +39,6 @@ const BenefitsSection = () => {
               className="flex flex-col items-center gap-3 rounded-xl bg-card p-6 shadow-sm"
             >
               <span className="text-3xl">{emoji}</span>
-              <Icon className="h-8 w-8 text-primary-foreground" />
               <span className="font-heading text-base font-bold text-foreground">{label}</span>
             </motion.div>
           ))}

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Package, CalendarDays, UtensilsCrossed } from "lucide-react";
 import LogoBadge from "./LogoBadge";
 import WhatsAppButton from "./WhatsAppButton";
-import heroImage from "@/assets/hero-salgados.jpg";
+import chefImage from "@/assets/chef.png";
 
 const HeroSection = () => {
   return (
@@ -10,7 +10,6 @@ const HeroSection = () => {
       {/* Header */}
       <div className="container flex items-center justify-between">
         <LogoBadge size="lg" />
-        <WhatsAppButton text="📲 Peça agora" location="header" className="hidden text-base sm:inline-flex" />
       </div>
 
       {/* Hero content */}
@@ -54,9 +53,9 @@ const HeroSection = () => {
           className="flex justify-center"
         >
           <img
-            src={heroImage}
-            alt="Salgados deliciosos - coxinhas, bolinhas de queijo, pastéis e kibes"
-            className="w-full max-w-md rounded-2xl shadow-2xl"
+            src={chefImage}
+            alt="Chef Salgado no Prato com bandeja de salgados"
+            className="w-full max-w-sm"
             loading="eager"
           />
         </motion.div>

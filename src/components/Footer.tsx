@@ -20,7 +20,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="flex flex-col items-center gap-3 md:items-end">
-            <p className="text-sm text-secondary-foreground/70">WhatsApp: (31) 99341-0289</p>
+            
             <div className="flex gap-3">
               <a
                 href="https://wa.me/5531993410289"
