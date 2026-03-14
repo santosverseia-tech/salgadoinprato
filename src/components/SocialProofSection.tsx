@@ -51,6 +51,21 @@ const SocialProofSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Avaliar button */}
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://instagram.com/salgado.noprato"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-heading font-bold text-primary-foreground shadow-md transition-all hover:scale-105"
+          >
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-5 w-5 fill-current" />
+            ))}
+            <span className="ml-1">Avaliar</span>
+          </a>
+        </div>
       </div>
     </section>
   );
