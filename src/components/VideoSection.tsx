@@ -21,7 +21,7 @@ const VideoSection = () => {
           <h2 className="text-3xl text-secondary-foreground md:text-4xl">Veja nossos salgados</h2>
           <p className="mt-3 text-secondary-foreground/70">Feitos com carinho e ingredientes de qualidade</p>
         </motion.div>
-        <div className="mx-auto mt-10 max-w-lg">
+        <div className="mx-auto mt-10 max-w-sm">
           <Carousel
             opts={{ loop: true }}
             plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}

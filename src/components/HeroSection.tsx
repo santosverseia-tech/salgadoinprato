@@ -23,7 +23,7 @@ const HeroSection = () => {
             Salgados fresquinhos e irresistíveis
           </h1>
           <p className="mt-4 text-lg text-secondary/80 md:text-xl">
-            Sabor que conquista no primeiro mordida e transforma qualquer evento em um sucesso.
+            Sabor que conquista na primeira mordida e transforma qualquer evento em um sucesso.
           </p>
 
           {/* Service icons */}
