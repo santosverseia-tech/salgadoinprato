@@ -74,6 +74,7 @@ const MenuSection = () => {
           <p className="mt-3 text-muted-foreground">
             Crocantes por fora, recheados na medida certa e preparados com ingredientes selecionados.
           </p>
+          <h3 className="mt-6 font-heading text-2xl font-bold text-primary-foreground md:text-3xl">📋 Cardápio</h3>
         </motion.div>
 
         {/* Menu grid */}
