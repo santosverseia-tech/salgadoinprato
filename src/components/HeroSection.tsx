@@ -53,9 +53,9 @@ const HeroSection = () => {
           className="flex justify-center"
         >
           <img
-            src={chefImage}
-            alt="Chef Salgado no Prato com bandeja de salgados"
-            className="w-full max-w-sm"
+            src={logoAsset.url}
+            alt="Logomarca Salgado no Prato"
+            className="w-full max-w-xs rounded-full border-4 border-primary-foreground/80 shadow-2xl"
             loading="eager"
           />
         </motion.div>
