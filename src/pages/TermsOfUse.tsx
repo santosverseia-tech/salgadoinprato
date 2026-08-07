@@ -10,7 +10,7 @@ const TermsOfUse = () => {
           <Link to="/">
             <LogoBadge size="md" />
           </Link>
-          <h1 className="text-2xl text-secondary md:text-3xl">Termos de Uso</h1>
+          <h1 className="text-2xl text-primary-foreground md:text-3xl">Termos de Uso</h1>
         </div>
       </header>
       <div className="container max-w-3xl py-12">
@@ -39,7 +39,7 @@ const TermsOfUse = () => {
           <p className="text-foreground">Para dúvidas sobre estes termos, entre em contato pelo WhatsApp: (31) 99341-0289 ou Instagram: @salgado.noprato</p>
         </div>
         <div className="mt-8">
-          <Link to="/" className="font-heading font-bold text-primary-foreground underline hover:text-foreground">
+          <Link to="/" className="font-heading font-bold text-primary underline hover:text-foreground">
             ← Voltar para a página inicial
           </Link>
         </div>

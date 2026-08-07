@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.png";
+import logoAsset from "@/assets/logo-2.png.asset.json";
 
 const LogoBadge = ({ size = "md" }: { size?: "sm" | "md" | "lg" }) => {
   const sizeClasses = {
@@ -9,7 +9,7 @@ const LogoBadge = ({ size = "md" }: { size?: "sm" | "md" | "lg" }) => {
 
   return (
     <div className={`badge-logo flex-shrink-0 ${sizeClasses[size]}`}>
-      <img src={logo} alt="Salgado no Prato" className="h-full w-full object-cover" loading="lazy" />
+      <img src={logoAsset.url} alt="Salgado no Prato" className="h-full w-full object-cover" loading="lazy" />
     </div>
   );
 };

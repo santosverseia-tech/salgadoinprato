@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 45 100% 97%;
-    --foreground: 0 0% 10%;
+    --background: 0 0% 100%;
+    --foreground: 345 25% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 345 25% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 345 25% 14%;
 
-    --primary: 45 100% 50%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 345 62% 30%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
+    --secondary: 345 45% 16%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 30% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 345 20% 96%;
+    --muted-foreground: 345 10% 40%;
 
-    --accent: 45 100% 55%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 345 60% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 45 30% 85%;
-    --input: 45 30% 85%;
-    --ring: 45 100% 50%;
+    --border: 345 18% 90%;
+    --input: 345 18% 90%;
+    --ring: 345 62% 30%;
 
     --radius: 0.75rem;
 
@@ -42,9 +42,9 @@
     --instagram: 330 80% 55%;
     --instagram-foreground: 0 0% 100%;
 
-    --hero-gradient: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(40, 100%, 45%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.08);
-    --card-shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.15);
+    --hero-gradient: linear-gradient(135deg, hsl(345, 62%, 30%) 0%, hsl(345, 55%, 22%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(345 40% 10% / 0.1);
+    --card-shadow-hover: 0 8px 30px -4px hsl(345 40% 10% / 0.18);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
