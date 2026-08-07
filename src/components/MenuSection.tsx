@@ -74,7 +74,7 @@ const MenuSection = () => {
           <p className="mt-3 text-muted-foreground">
             Crocantes por fora, recheados na medida certa e preparados com ingredientes selecionados.
           </p>
-          <h3 className="mt-6 font-heading text-2xl font-bold text-primary-foreground md:text-3xl">📋 Cardápio</h3>
+          <h3 className="mt-6 font-heading text-2xl font-bold text-primary md:text-3xl">📋 Cardápio</h3>
         </motion.div>
 
         {/* Menu grid */}
@@ -94,7 +94,7 @@ const MenuSection = () => {
                   <span className="text-3xl">{item.emoji}</span>
                   <h3 className="mt-2 font-heading text-lg font-bold text-foreground">{item.name}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
-                  <p className="mt-2 text-xs font-semibold text-primary-foreground/70">{item.priceLabel}</p>
+                  <p className="mt-2 text-xs font-semibold text-primary/80">{item.priceLabel}</p>
                 </div>
                 <div className="mt-4 flex items-center gap-3">
                   <button

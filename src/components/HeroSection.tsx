@@ -19,10 +19,10 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-balance text-4xl leading-tight text-secondary md:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-4xl leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
             Salgados fresquinhos e irresistíveis
           </h1>
-          <p className="mt-4 text-lg text-secondary/80 md:text-xl">
+          <p className="mt-4 text-lg text-primary-foreground/80 md:text-xl">
             Sabor que conquista na primeira mordida e transforma qualquer evento em um sucesso.
           </p>
 
@@ -33,16 +33,16 @@ const HeroSection = () => {
               { icon: CalendarDays, label: "Eventos" },
               { icon: UtensilsCrossed, label: "Buffet" },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2">
-                <Icon className="h-5 w-5 text-secondary" />
-                <span className="font-heading text-sm font-bold text-secondary">{label}</span>
+              <div key={label} className="flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2">
+                <Icon className="h-5 w-5 text-primary-foreground" />
+                <span className="font-heading text-sm font-bold text-primary-foreground">{label}</span>
               </div>
             ))}
           </div>
 
           <div className="mt-8">
             <WhatsAppButton text="📲 Fazer pedido no WhatsApp" location="hero" />
-            <p className="mt-3 text-sm text-secondary/60">Atendimento rápido e pedidos personalizados.</p>
+            <p className="mt-3 text-sm text-primary-foreground/60">Atendimento rápido e pedidos personalizados.</p>
           </div>
         </motion.div>
 
