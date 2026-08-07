@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
           <p className="text-muted-foreground">Última atualização: Março de 2026</p>
 
           <h2 className="font-heading text-xl font-bold text-foreground">1. Informações coletadas</h2>
-          <p className="text-foreground">A Salgado no Prato coleta informações fornecidas voluntariamente por você ao entrar em contato via WhatsApp ou formulários, incluindo nome, telefone e detalhes do pedido.</p>
+          <p className="text-foreground">O Cantinho da Lira coleta informações fornecidas voluntariamente por você ao entrar em contato via WhatsApp ou formulários, incluindo nome, telefone e detalhes do pedido.</p>
 
           <h2 className="font-heading text-xl font-bold text-foreground">2. Uso das informações</h2>
           <p className="text-foreground">As informações são utilizadas exclusivamente para processar pedidos, melhorar nossos serviços e enviar comunicações relevantes sobre promoções e novidades.</p>
@@ -33,10 +33,10 @@ const PrivacyPolicy = () => {
           <p className="text-foreground">Adotamos medidas de segurança adequadas para proteger suas informações contra acesso não autorizado, alteração ou destruição.</p>
 
           <h2 className="font-heading text-xl font-bold text-foreground">6. Seus direitos</h2>
-          <p className="text-foreground">Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento entrando em contato conosco pelo WhatsApp (31) 99341-0289.</p>
+          <p className="text-foreground">Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento entrando em contato conosco pelo WhatsApp 55 71 98819-0836.</p>
 
           <h2 className="font-heading text-xl font-bold text-foreground">7. Contato</h2>
-          <p className="text-foreground">Para dúvidas sobre esta política, entre em contato pelo WhatsApp: (31) 99341-0289 ou Instagram: @salgado.noprato</p>
+          <p className="text-foreground">Para dúvidas sobre esta política, entre em contato pelo WhatsApp: 55 71 98819-0836 ou Instagram: @salgado.noprato</p>
         </div>
         <div className="mt-8">
           <Link to="/" className="font-heading font-bold text-primary underline hover:text-foreground">
