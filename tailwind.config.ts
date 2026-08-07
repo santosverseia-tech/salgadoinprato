@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ["Nunito", "sans-serif"],
         body: ["Open Sans", "sans-serif"],
+        script: ["Pacifico", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
