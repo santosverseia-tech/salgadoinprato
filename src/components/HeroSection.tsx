@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Package, CalendarDays, UtensilsCrossed } from "lucide-react";
 import LogoBadge from "./LogoBadge";
 import WhatsAppButton from "./WhatsAppButton";
-import chefImage from "@/assets/chef.png";
+import logoAsset from "@/assets/logo-2.png.asset.json";
 
 const HeroSection = () => {
   return (
