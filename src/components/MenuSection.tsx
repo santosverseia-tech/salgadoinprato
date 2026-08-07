@@ -1,25 +1,32 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Plus, Minus, Send } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus, Send, ShoppingBag } from "lucide-react";
 import WhatsAppButton from "./WhatsAppButton";
+import coxinhaImg from "@/assets/menu/coxinha.jpg";
+import bolinhaImg from "@/assets/menu/bolinha-de-queijo.jpg";
+import pastelImg from "@/assets/menu/pastel.jpg";
+import kibeImg from "@/assets/menu/kibe.jpg";
+import risoleImg from "@/assets/menu/risole.jpg";
+import empadaImg from "@/assets/menu/empada.jpg";
+import enroladinhoImg from "@/assets/menu/enroladinho.jpg";
+import churrosImg from "@/assets/menu/churros.jpg";
 
 interface MenuItem {
   id: string;
   name: string;
-  description: string;
   priceLabel: string;
-  emoji: string;
+  image: string;
 }
 
 const menuItems: MenuItem[] = [
-  { id: "coxinha", name: "Coxinha", description: "Massa crocante, recheio cremoso de frango", priceLabel: "Consulte", emoji: "🍗" },
-  { id: "bolinha", name: "Bolinha de Queijo", description: "Queijo derretido por dentro, crocante por fora", priceLabel: "Consulte", emoji: "🧀" },
-  { id: "pastel", name: "Pastel", description: "Massa fininha e recheio generoso", priceLabel: "Consulte", emoji: "🥟" },
-  { id: "kibe", name: "Kibe", description: "Tempero marcante e massa leve", priceLabel: "Consulte", emoji: "🥩" },
-  { id: "risole", name: "Risole", description: "Massa macia com recheio saboroso", priceLabel: "Consulte", emoji: "🥘" },
-  { id: "empada", name: "Empada", description: "Massa amanteigada com recheio especial", priceLabel: "Consulte", emoji: "🥧" },
-  { id: "enroladinho", name: "Enroladinho de Salsicha", description: "Crocante e irresistível", priceLabel: "Consulte", emoji: "🌭" },
-  { id: "churros", name: "Churros", description: "Doce, crocante e recheado", priceLabel: "Consulte", emoji: "🍩" },
+  { id: "coxinha", name: "Coxinha", priceLabel: "Consulte", image: coxinhaImg },
+  { id: "bolinha", name: "Bolinha de Queijo", priceLabel: "Consulte", image: bolinhaImg },
+  { id: "pastel", name: "Pastel", priceLabel: "Consulte", image: pastelImg },
+  { id: "kibe", name: "Kibe", priceLabel: "Consulte", image: kibeImg },
+  { id: "risole", name: "Risole", priceLabel: "Consulte", image: risoleImg },
+  { id: "empada", name: "Empada", priceLabel: "Consulte", image: empadaImg },
+  { id: "enroladinho", name: "Enroladinho de Salsicha", priceLabel: "Consulte", image: enroladinhoImg },
+  { id: "churros", name: "Churros", priceLabel: "Consulte", image: churrosImg },
 ];
 
 const WHATSAPP_BASE = "https://wa.me/5571988190836";
@@ -44,7 +51,7 @@ const MenuSection = () => {
     const lines = Object.entries(order)
       .map(([id, qty]) => {
         const item = menuItems.find((m) => m.id === id);
-        return `• ${item?.emoji} ${item?.name}: ${qty} unidade(s)`;
+        return `• ${item?.name}: ${qty} unidade(s)`;
       })
       .join("\n");
 
@@ -52,7 +59,6 @@ const MenuSection = () => {
       `Olá! Gostaria de fazer um pedido:\n\n${lines}\n\nTotal de itens: ${totalItems}\n\nAguardo o orçamento. Obrigado!`
     );
 
-    // Track events
     if ((window as any).fbq) (window as any).fbq("track", "Lead");
     if ((window as any).gtag) (window as any).gtag("event", "clique_whatsapp", { location: "menu_order" });
 
@@ -60,55 +66,81 @@ const MenuSection = () => {
   };
 
   return (
-    <section id="cardapio" className="bg-card py-16">
-      <div className="container">
+    <section id="cardapio" className="relative overflow-hidden bg-primary py-16">
+      {/* Decorative background pattern */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, hsl(0 0% 100% / 0.25) 0%, transparent 25%),
+                            radial-gradient(circle at 75% 75%, hsl(0 0% 100% / 0.2) 0%, transparent 25%)`,
+        }}
+      />
+
+      <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-3xl text-foreground md:text-4xl">
-            Salgados irresistíveis que fazem qualquer evento virar um sucesso
+          <span className="inline-block font-heading text-sm font-bold uppercase tracking-widest text-primary-foreground/70">
+            3. Cardápio Menu
+          </span>
+          <h2 className="mt-3 text-balance text-3xl leading-tight text-primary-foreground md:text-5xl">
+            Escolha seus favoritos e monte seu pedido
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Crocantes por fora, recheados na medida certa e preparados com ingredientes selecionados.
+          <p className="mt-3 text-primary-foreground/75">
+            Salgados artesanais, crocantes por fora e recheados na medida certa.
           </p>
-          <h3 className="mt-6 font-heading text-2xl font-bold text-primary md:text-3xl">📋 Cardápio</h3>
         </motion.div>
 
         {/* Menu grid */}
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {menuItems.map((item, i) => {
             const qty = order[item.id] || 0;
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex flex-col justify-between rounded-xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
+                transition={{ delay: i * 0.06 }}
+                className="group relative flex flex-col items-center overflow-hidden rounded-2xl border border-white/15 bg-card p-4 shadow-lg transition-shadow hover:shadow-xl"
               >
-                <div>
-                  <span className="text-3xl">{item.emoji}</span>
-                  <h3 className="mt-2 font-heading text-lg font-bold text-foreground">{item.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
-                  <p className="mt-2 text-xs font-semibold text-primary/80">{item.priceLabel}</p>
+                <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-muted">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width={600}
+                    height={600}
+                  />
+                  {qty > 0 && (
+                    <span className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground shadow">
+                      {qty}
+                    </span>
+                  )}
                 </div>
-                <div className="mt-4 flex items-center gap-3">
+
+                <div className="mt-4 w-full text-center">
+                  <h3 className="font-script text-2xl text-primary">{item.name}</h3>
+                  <p className="mt-1 font-heading text-sm font-bold text-muted-foreground">{item.priceLabel}</p>
+                </div>
+
+                <div className="mt-4 flex w-full items-center justify-center gap-3">
                   <button
                     onClick={() => updateQty(item.id, -1)}
                     disabled={qty === 0}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-foreground transition-colors hover:bg-border disabled:opacity-30"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-muted text-foreground transition-colors hover:bg-border disabled:opacity-40"
                     aria-label={`Diminuir ${item.name}`}
                   >
                     <Minus className="h-4 w-4" />
                   </button>
-                  <span className="w-6 text-center font-heading font-bold text-foreground">{qty}</span>
+                  <span className="w-8 text-center font-heading text-lg font-bold text-foreground">{qty}</span>
                   <button
                     onClick={() => updateQty(item.id, 1)}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-accent"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-accent"
                     aria-label={`Adicionar ${item.name}`}
                   >
                     <Plus className="h-4 w-4" />
@@ -120,36 +152,42 @@ const MenuSection = () => {
         </div>
 
         {/* Order summary */}
-        {totalItems > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mx-auto mt-8 max-w-md rounded-2xl bg-secondary p-6 text-center text-secondary-foreground shadow-lg"
-          >
-            <p className="font-heading text-lg font-bold">
-              Seu pedido: {totalItems} {totalItems === 1 ? "item" : "itens"}
-            </p>
-            <ul className="mt-3 space-y-1 text-sm text-secondary-foreground/80">
-              {Object.entries(order).map(([id, qty]) => {
-                const item = menuItems.find((m) => m.id === id);
-                return (
-                  <li key={id}>
-                    {item?.emoji} {item?.name} × {qty}
-                  </li>
-                );
-              })}
-            </ul>
-            <button
-              onClick={sendOrder}
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-whatsapp px-8 py-3 font-heading text-base font-bold text-whatsapp-foreground shadow transition-transform hover:scale-105 active:scale-95"
+        <AnimatePresence>
+          {totalItems > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              className="mx-auto mt-10 max-w-lg rounded-2xl bg-secondary p-6 text-center text-secondary-foreground shadow-2xl"
             >
-              <Send className="h-5 w-5" /> Enviar pedido pelo WhatsApp
-            </button>
-          </motion.div>
-        )}
+              <div className="flex items-center justify-center gap-2">
+                <ShoppingBag className="h-5 w-5" />
+                <p className="font-heading text-lg font-bold">
+                  Seu pedido: {totalItems} {totalItems === 1 ? "item" : "itens"}
+                </p>
+              </div>
+              <ul className="mt-3 space-y-1 text-sm text-secondary-foreground/80">
+                {Object.entries(order).map(([id, qty]) => {
+                  const item = menuItems.find((m) => m.id === id);
+                  return (
+                    <li key={id}>
+                      {item?.name} × {qty}
+                    </li>
+                  );
+                })}
+              </ul>
+              <button
+                onClick={sendOrder}
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-whatsapp px-8 py-3 font-heading text-base font-bold text-whatsapp-foreground shadow transition-transform hover:scale-105 active:scale-95"
+              >
+                <Send className="h-5 w-5" /> Enviar pedido pelo WhatsApp
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {totalItems === 0 && (
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center">
             <WhatsAppButton text="📲 Faça seu pedido agora pelo WhatsApp" location="menu" />
           </div>
         )}
