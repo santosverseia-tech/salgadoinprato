@@ -54,7 +54,7 @@ const HeroSection = () => {
         >
           <img
             src={logoAsset.url}
-            alt="Logomarca Salgado no Prato"
+            alt="Logomarca Cantinho da Lira"
             className="w-full max-w-xs rounded-full border-4 border-primary-foreground/80 shadow-2xl"
             loading="eager"
           />

@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
   { id: "churros", name: "Churros", description: "Doce, crocante e recheado", priceLabel: "Consulte", emoji: "🍩" },
 ];
 
-const WHATSAPP_BASE = "https://wa.me/5531993410289";
+const WHATSAPP_BASE = "https://wa.me/5571988190836";
 
 const MenuSection = () => {
   const [order, setOrder] = useState<Record<string, number>>({});
