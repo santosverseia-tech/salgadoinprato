@@ -5,8 +5,15 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import coxinhas from "@/assets/showcase/coxinhas.jpg";
+import quibes from "@/assets/showcase/quibes.jpg";
+import pasteis from "@/assets/showcase/pasteis.jpg";
 
-const videos = ["/videos/salgados1.mp4", "/videos/salgados2.mp4"];
+const items = [
+  { src: coxinhas, alt: "Coxinhas fritas douradas em tábua de madeira" },
+  { src: quibes, alt: "Quibes crocantes servidos em tábua de madeira" },
+  { src: pasteis, alt: "Pastéis fritos crocantes empilhados em tábua de madeira" },
+];
 
 const VideoSection = () => {
   return (
@@ -27,17 +34,16 @@ const VideoSection = () => {
             plugins={[Autoplay({ delay: 4000, stopOnInteraction: false })]}
           >
             <CarouselContent>
-              {videos.map((src, i) => (
+              {items.map((item, i) => (
                 <CarouselItem key={i}>
                   <div className="overflow-hidden rounded-2xl shadow-lg">
-                    <video
-                      src={src}
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      width={800}
+                      height={800}
+                      loading="lazy"
                       className="h-auto w-full"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
                     />
                   </div>
                 </CarouselItem>

@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
           <p className="text-foreground">Você pode solicitar acesso, correção ou exclusão dos seus dados pessoais a qualquer momento entrando em contato conosco pelo WhatsApp 55 71 98819-0836.</p>
 
           <h2 className="font-heading text-xl font-bold text-foreground">7. Contato</h2>
-          <p className="text-foreground">Para dúvidas sobre esta política, entre em contato pelo WhatsApp: 55 71 98819-0836 ou Instagram: @salgado.noprato</p>
+          <p className="text-foreground">Para dúvidas sobre esta política, entre em contato pelo WhatsApp: 55 71 98819-0836</p>
         </div>
         <div className="mt-8">
           <Link to="/" className="font-heading font-bold text-primary underline hover:text-foreground">
