@@ -60,6 +60,12 @@ export default {
           DEFAULT: "hsl(var(--instagram))",
           foreground: "hsl(var(--instagram-foreground))",
         },
+        footer: {
+          DEFAULT: "hsl(var(--footer))",
+          foreground: "hsl(var(--footer-foreground))",
+          muted: "hsl(var(--footer-muted))",
+          accent: "hsl(var(--footer-accent))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -1,107 +1,127 @@
-import { MessageCircle, Instagram, Star, MapPin, Clock, ExternalLink } from "lucide-react";
+import { MessageCircle, Instagram, MapPin, Clock, Phone, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import LogoBadge from "./LogoBadge";
+
+const WHATSAPP_URL = "https://wa.me/5571988190836";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Rua+Vila+Aurino+-+Vilas+de+Abrantes+-+Camaçari+BA";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead");
+    }
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "clique_whatsapp", { location: "footer" });
+    }
+    window.open(WHATSAPP_URL, "_blank");
+  };
+
   return (
-    <footer className="bg-secondary py-12">
+    <footer className="bg-footer py-14 text-footer-foreground">
       <div className="container">
-        {/* Brand row */}
-        <div className="flex flex-col items-center gap-4 md:flex-row md:items-start">
-          <LogoBadge size="md" />
-          <div>
-            <p className="font-heading text-xl font-bold text-secondary-foreground">Cantinho da Lira</p>
-            <p className="max-w-xs text-sm text-secondary-foreground/60">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Column 1 — Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <LogoBadge size="md" />
+              <span className="font-heading text-xl font-bold">Cantinho da Lira</span>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-footer-muted">
               Salgados artesanais preparados com ingredientes selecionados para tornar seus eventos inesquecíveis.
             </p>
           </div>
-        </div>
 
-        {/* 3 columns */}
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {/* Column 1 — Horário & WhatsApp */}
-          <div className="space-y-4 text-sm text-secondary-foreground">
-            <div>
-              <h4 className="flex items-center gap-2 font-heading font-bold">
-                <Clock className="h-4 w-4" /> Horário de funcionamento
-              </h4>
-              <p className="mt-1 text-secondary-foreground/70">Seg a Sex: 08h – 18h</p>
-              <p className="text-secondary-foreground/70">Sábado: 08h – 14h</p>
-            </div>
-            <div>
-              <h4 className="flex items-center gap-2 font-heading font-bold">
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </h4>
-              <a
-                href="tel:+5571988190836"
-                className="mt-1 inline-block text-secondary-foreground/70 underline hover:text-secondary-foreground"
-              >
-                55 71 98819-0836
-              </a>
+          {/* Column 2 — Atendimento */}
+          <div className="space-y-4">
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wide">Atendimento</h4>
+            <div className="space-y-3 text-sm text-footer-muted">
+              <div className="flex items-start gap-2">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-footer-accent" />
+                <div>
+                  <p className="font-semibold text-footer-foreground">Horário</p>
+                  <p>Seg a Sex: 08h – 18h</p>
+                  <p>Sáb: 08h – 14h</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-footer-accent" />
+                <div>
+                  <p className="font-semibold text-footer-foreground">WhatsApp</p>
+                  <button
+                    onClick={handleWhatsAppClick}
+                    className="hover:text-footer-foreground hover:underline"
+                  >
+                    55 71 98819-0836
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Column 2 — Localização */}
-          <div className="space-y-2 text-sm text-secondary-foreground">
-            <h4 className="flex items-center gap-2 font-heading font-bold">
-              <MapPin className="h-4 w-4" /> Localização
-            </h4>
-            <p className="text-secondary-foreground/70">
-              Atendemos toda a região de Belo Horizonte e região.
-            </p>
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-heading font-bold text-primary underline hover:text-primary/80"
-            >
-              <ExternalLink className="h-4 w-4" /> Ver no Google Maps
-            </a>
-          </div>
-
-          {/* Column 3 — Redes & Links */}
-          <div className="space-y-4 text-sm text-secondary-foreground">
-            <div>
-              <h4 className="font-heading font-bold">Redes sociais</h4>
-              <div className="mt-2 flex gap-3">
+          {/* Column 3 — Localização */}
+          <div className="space-y-4">
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wide">Localização</h4>
+            <div className="flex items-start gap-2 text-sm text-footer-muted">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-footer-accent" />
+              <div>
+                <p>Rua Vila Aurino</p>
+                <p>Vilas de Abrantes</p>
+                <p>Camaçari / BA</p>
                 <a
-                  href="https://wa.me/5571988190836"
+                  href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 font-heading font-bold text-footer-accent hover:underline"
+                >
+                  Ver no mapa <ArrowRight className="h-3 w-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 4 — Redes & Links */}
+          <div className="space-y-5">
+            <div>
+              <h4 className="font-heading text-sm font-bold uppercase tracking-wide">Redes sociais</h4>
+              <div className="mt-3 flex gap-3">
+                <span
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-instagram text-instagram-foreground"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </span>
+                <button
+                  onClick={handleWhatsAppClick}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground transition-transform hover:scale-110"
                   aria-label="WhatsApp"
                 >
                   <MessageCircle className="h-5 w-5" fill="currentColor" />
-                </a>
-                <a
-                  href="https://instagram.com/salgado.noprato"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-instagram text-instagram-foreground transition-transform hover:scale-110"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
+                </button>
               </div>
             </div>
             <div>
-              <h4 className="font-heading font-bold">Links rápidos</h4>
-              <ul className="mt-1 space-y-1">
+              <h4 className="font-heading text-sm font-bold uppercase tracking-wide">Links rápidos</h4>
+              <ul className="mt-3 space-y-2 text-sm text-footer-muted">
                 <li>
-                  <a href="#cardapio" className="text-secondary-foreground/70 underline hover:text-secondary-foreground">
+                  <a href="#cardapio" className="hover:text-footer-foreground hover:underline">
                     Cardápio
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://wa.me/5571988190836"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary-foreground/70 underline hover:text-secondary-foreground"
-                  >
-                    Fazer pedido
+                  <button onClick={handleWhatsAppClick} className="hover:text-footer-foreground hover:underline">
+                    Fazer Pedido
+                  </button>
+                </li>
+                <li>
+                  <a href="#sobre" className="hover:text-footer-foreground hover:underline">
+                    Sobre
+                  </a>
+                </li>
+                <li>
+                  <a href="#contato" className="hover:text-footer-foreground hover:underline">
+                    Contato
                   </a>
                 </li>
               </ul>
@@ -110,13 +130,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-secondary-foreground/10 pt-6 text-xs text-secondary-foreground/50 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-footer-foreground/10 pt-6 text-xs text-footer-muted md:flex-row">
           <p>© {year} Cantinho da Lira. Todos os direitos reservados.</p>
-          <div className="flex gap-3">
-            <Link to="/politica-de-privacidade" className="underline hover:text-secondary-foreground/80">
+          <div className="flex gap-4">
+            <Link to="/politica-de-privacidade" className="hover:text-footer-foreground hover:underline">
               Política de Privacidade
             </Link>
-            <Link to="/termos-de-uso" className="underline hover:text-secondary-foreground/80">
+            <Link to="/termos-de-uso" className="hover:text-footer-foreground hover:underline">
               Termos de Uso
             </Link>
           </div>
