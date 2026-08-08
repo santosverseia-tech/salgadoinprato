@@ -36,7 +36,7 @@ const TermsOfUse = () => {
           <p className="text-foreground">O Cantinho da Lira não se responsabiliza por danos indiretos decorrentes do uso deste site ou da indisponibilidade temporária dos serviços.</p>
 
           <h2 className="font-heading text-xl font-bold text-foreground">7. Contato</h2>
-          <p className="text-foreground">Para dúvidas sobre estes termos, entre em contato pelo WhatsApp: 55 71 98819-0836 ou Instagram: @salgado.noprato</p>
+          <p className="text-foreground">Para dúvidas sobre estes termos, entre em contato pelo WhatsApp: 55 71 98819-0836</p>
         </div>
         <div className="mt-8">
           <Link to="/" className="font-heading font-bold text-primary underline hover:text-foreground">
