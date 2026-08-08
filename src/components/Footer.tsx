@@ -86,6 +86,12 @@ const Footer = () => {
             <div>
               <h4 className="font-heading text-sm font-bold uppercase tracking-wide">Redes sociais</h4>
               <div className="mt-3 flex gap-3">
+                <span
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-instagram text-instagram-foreground"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </span>
                 <button
                   onClick={handleWhatsAppClick}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground transition-transform hover:scale-110"
@@ -93,12 +99,6 @@ const Footer = () => {
                 >
                   <MessageCircle className="h-5 w-5" fill="currentColor" />
                 </button>
-                <span
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-instagram text-instagram-foreground"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
-                </span>
               </div>
             </div>
             <div>
