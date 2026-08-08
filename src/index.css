@@ -43,6 +43,11 @@
     --instagram: 330 80% 55%;
     --instagram-foreground: 0 0% 100%;
 
+    --footer: 0 0% 9%;
+    --footer-foreground: 0 0% 100%;
+    --footer-muted: 0 0% 65%;
+    --footer-accent: 43 85% 52%;
+
     --hero-gradient: linear-gradient(135deg, hsl(43, 82%, 63%) 0%, hsl(40, 78%, 54%) 100%);
     --card-shadow: 0 4px 20px -4px hsl(356 50% 20% / 0.15);
     --card-shadow-hover: 0 8px 30px -4px hsl(356 50% 20% / 0.25);
