@@ -17,7 +17,7 @@ const differentials = [
 
 const BenefitsSection = () => {
   return (
-    <section className="bg-primary/10 py-16">
+    <section className="bg-card py-16">
       <div className="container">
         {/* Occasions */}
         <motion.div

@@ -21,7 +21,7 @@ const testimonials = [
 
 const SocialProofSection = () => {
   return (
-    <section className="bg-card py-16">
+    <section className="bg-background py-16">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ const SocialProofSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-xl border border-border bg-background p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-sm"
             >
               <div className="flex gap-1">
                 {Array.from({ length: t.rating }).map((_, j) => (
